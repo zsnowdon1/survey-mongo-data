@@ -1,8 +1,11 @@
-package com.voting.survey_host.mongoData;
+package com.voting.utils;
 
-import com.voting.survey_host.entity.ChoiceDTO;
-import com.voting.survey_host.entity.QuestionDTO;
-import com.voting.survey_host.entity.SurveyDTO;
+import com.voting.entities.ChoiceDTO;
+import com.voting.mongoData.Choice;
+import com.voting.mongoData.Question;
+import com.voting.mongoData.Survey;
+import com.voting.entities.QuestionDTO;
+import com.voting.entities.SurveyDTO;
 
 import java.util.List;
 import java.util.UUID;
