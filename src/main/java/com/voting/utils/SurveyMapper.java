@@ -44,7 +44,9 @@ public class SurveyMapper {
     public static Question toEntityQuestion(QuestionDTO questionDTO) {
         Question question = new Question();
         question.setQuestionText(questionDTO.getQuestionText());
-        question.setQuestionId(UUID.randomUUID().toString());
+        question.setQuestionId(questionDTO.getQuestionId() != null
+                ? questionDTO.getQuestionId()
+                : UUID.randomUUID().toString());
         if(!isNull(questionDTO.getChoices()))
             question.setChoices(toEntityChoiceList(questionDTO.getChoices()));
         return question;
@@ -61,7 +63,9 @@ public class SurveyMapper {
     public static Choice toEntityChoice(ChoiceDTO choiceDTO) {
         Choice choice = new Choice();
         choice.setChoiceText(choiceDTO.getChoiceText());
-        choice.setChoiceId(UUID.randomUUID().toString());
+        choice.setChoiceId(choiceDTO.getChoiceId() != null
+                ? choiceDTO.getChoiceId()
+                : UUID.randomUUID().toString());
         return choice;
     }
 
