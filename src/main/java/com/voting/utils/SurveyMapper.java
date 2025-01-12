@@ -26,6 +26,7 @@ public class SurveyMapper {
         survey.setTitle(surveyDTO.getTitle());
         survey.setHostUsername(surveyDTO.getHostUsername());
         survey.setSurveyId(surveyDTO.getSurveyId());
+        survey.setStatus(surveyDTO.getStatus());
         if(!isNull(surveyDTO.getQuestions()))
             survey.setQuestions(toEntityQuestionList(surveyDTO.getQuestions()));
         return survey;
@@ -36,6 +37,7 @@ public class SurveyMapper {
         surveyDTO.setSurveyId(survey.getSurveyId());
         surveyDTO.setTitle(survey.getTitle());
         surveyDTO.setHostUsername(survey.getHostUsername());
+        surveyDTO.setStatus(survey.getStatus());
         if(!isNull(survey.getQuestions()))
             surveyDTO.setQuestions(toDTOQuestionList(survey.getQuestions()));
         return surveyDTO;

@@ -9,8 +9,8 @@ import java.util.List;
 @ToString
 @Getter
 @Setter
-public class QuestionDTO {
-    private String questionId;
-    private String questionText;
-    private List<ChoiceDTO> choices;
+public class LiveSurveyDTO {
+    private String surveyId;
+    private String title;
+    private List<LiveQuestionDTO> questions;
 }

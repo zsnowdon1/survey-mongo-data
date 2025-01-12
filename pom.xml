@@ -22,10 +22,9 @@
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-mongodb</artifactId>
-      <version>4.0.0</version> <!-- Adjust version as needed -->
+      <version>4.0.0</version>
     </dependency>
 
-    <!-- Optional: Lombok for simplifying your models -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
