@@ -18,5 +18,6 @@ public class Survey {
     private String title;
     private String hostUsername;
     private String status;
+    private String accessCode;
     private List<Question> questions;
 }

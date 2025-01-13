@@ -15,4 +15,5 @@ public class SurveyDetailDTO {
     private String surveyId;
     private String title;
     private int questionCount;
+    private String status;
 }

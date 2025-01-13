@@ -14,5 +14,6 @@ public class SurveyDTO {
     private String hostUsername;
     private String title;
     private String status;
+    private String accessCode;
     private List<QuestionDTO> questions;
 }

@@ -27,6 +27,7 @@ public class SurveyMapper {
         survey.setHostUsername(surveyDTO.getHostUsername());
         survey.setSurveyId(surveyDTO.getSurveyId());
         survey.setStatus(surveyDTO.getStatus());
+        survey.setAccessCode(surveyDTO.getAccessCode());
         if(!isNull(surveyDTO.getQuestions()))
             survey.setQuestions(toEntityQuestionList(surveyDTO.getQuestions()));
         return survey;
@@ -38,6 +39,7 @@ public class SurveyMapper {
         surveyDTO.setTitle(survey.getTitle());
         surveyDTO.setHostUsername(survey.getHostUsername());
         surveyDTO.setStatus(survey.getStatus());
+        surveyDTO.setAccessCode(survey.getAccessCode());
         if(!isNull(survey.getQuestions()))
             surveyDTO.setQuestions(toDTOQuestionList(survey.getQuestions()));
         return surveyDTO;
@@ -57,6 +59,7 @@ public class SurveyMapper {
     public static QuestionDTO toDTOQuestion(Question question) {
         QuestionDTO questionDTO = new QuestionDTO();
         questionDTO.setQuestionText(question.getQuestionText());
+        questionDTO.setQuestionId(question.getQuestionId());
         if(!isNull(question.getChoices()))
             questionDTO.setChoices(toDTOChoiceList(question.getChoices()));
         return questionDTO;
