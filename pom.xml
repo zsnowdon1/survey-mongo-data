@@ -17,6 +17,13 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/zsnowdon1/survey-mongo-data</url>
+    </repository>
+  </distributionManagement>
 
   <dependencies>
     <dependency>
