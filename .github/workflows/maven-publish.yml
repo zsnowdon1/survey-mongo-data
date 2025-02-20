@@ -22,6 +22,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Package jar
+        run: mvn clean install
       - name: Publish package
         run: mvn --batch-mode deploy
         env:
