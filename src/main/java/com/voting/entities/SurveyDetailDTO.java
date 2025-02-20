@@ -16,4 +16,5 @@ public class SurveyDetailDTO {
     private String title;
     private int questionCount;
     private String status;
+    private String accessCode;
 }
