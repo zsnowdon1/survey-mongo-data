@@ -17,4 +17,8 @@ public class SurveyDTO {
     private String status;
     private String accessCode;
     private List<QuestionDTO> questions;
+    private Map<String, Map<String, Long>> results;
+    private String createdAt;
+    private String updatedAt;
+    private String closedAt;
 }
