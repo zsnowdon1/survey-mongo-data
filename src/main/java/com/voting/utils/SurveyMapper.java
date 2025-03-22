@@ -28,6 +28,10 @@ public class SurveyMapper {
         survey.setSurveyId(surveyDTO.getSurveyId());
         survey.setStatus(surveyDTO.getStatus());
         survey.setAccessCode(surveyDTO.getAccessCode());
+        survey.setCreatedAt(surveyDTO.getCreatedAt());
+        survey.setUpdatedAt(surveyDTO.getUpdatedAt());
+        survey.setResults(surveyDTO.getResults());
+        survey.setClosedAt(surveyDTO.getClosedAt());
         if(!isNull(surveyDTO.getQuestions()))
             survey.setQuestions(toEntityQuestionList(surveyDTO.getQuestions()));
         return survey;
@@ -40,6 +44,10 @@ public class SurveyMapper {
         surveyDTO.setHostUsername(survey.getHostUsername());
         surveyDTO.setStatus(survey.getStatus());
         surveyDTO.setAccessCode(survey.getAccessCode());
+        surveyDTO.setCreatedAt(survey.getCreatedAt());
+        surveyDTO.setUpdatedAt(survey.getUpdatedAt());
+        surveyDTO.setResults(survey.getResults());
+        surveyDTO.setClosedAt(survey.getClosedAt());
         if(!isNull(survey.getQuestions()))
             surveyDTO.setQuestions(toDTOQuestionList(survey.getQuestions()));
         return surveyDTO;
