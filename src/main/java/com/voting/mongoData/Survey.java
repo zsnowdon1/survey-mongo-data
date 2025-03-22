@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
+import java.util.Map;
 
 @Document(collection = "surveys")
 @AllArgsConstructor
@@ -20,4 +21,8 @@ public class Survey {
     private String status;
     private String accessCode;
     private List<Question> questions;
+    private Map<String, Map<String, Long>> results;
+    private String createdAt;
+    private String updatedAt;
+    private String closedAt;
 }
