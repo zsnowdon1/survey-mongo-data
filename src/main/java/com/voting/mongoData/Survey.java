@@ -21,7 +21,6 @@ public class Survey {
     private String status;
     private String accessCode;
     private List<Question> questions;
-    private Map<String, Map<String, Long>> results;
     private String createdAt;
     private String updatedAt;
     private String closedAt;

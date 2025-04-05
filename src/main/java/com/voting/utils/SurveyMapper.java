@@ -30,7 +30,6 @@ public class SurveyMapper {
         survey.setAccessCode(surveyDTO.getAccessCode());
         survey.setCreatedAt(surveyDTO.getCreatedAt());
         survey.setUpdatedAt(surveyDTO.getUpdatedAt());
-        survey.setResults(surveyDTO.getResults());
         survey.setClosedAt(surveyDTO.getClosedAt());
         if(!isNull(surveyDTO.getQuestions()))
             survey.setQuestions(toEntityQuestionList(surveyDTO.getQuestions()));
@@ -46,7 +45,6 @@ public class SurveyMapper {
         surveyDTO.setAccessCode(survey.getAccessCode());
         surveyDTO.setCreatedAt(survey.getCreatedAt());
         surveyDTO.setUpdatedAt(survey.getUpdatedAt());
-        surveyDTO.setResults(survey.getResults());
         surveyDTO.setClosedAt(survey.getClosedAt());
         if(!isNull(survey.getQuestions()))
             surveyDTO.setQuestions(toDTOQuestionList(survey.getQuestions()));
