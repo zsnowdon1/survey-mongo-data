@@ -15,13 +15,13 @@ import static java.util.Objects.isNull;
 
 public class SurveyMapper {
 
-    public static List<SurveyDTO> toDTOSurveyList(List<Survey> surveyList) {
+    public static List<SurveyDTO> mapSurveyListToDTO(List<Survey> surveyList) {
         return surveyList.stream()
-                .map(SurveyMapper::toDTOSurvey)
+                .map(SurveyMapper::mapToDTO)
                 .collect(Collectors.toList());
     }
 
-    public static Survey toEntitySurvey(SurveyDTO surveyDTO) {
+    public static Survey mapToMongo(SurveyDTO surveyDTO) {
         Survey survey = new Survey();
         survey.setTitle(surveyDTO.getTitle());
         survey.setHostUsername(surveyDTO.getHostUsername());
@@ -36,7 +36,7 @@ public class SurveyMapper {
         return survey;
     }
 
-    public static SurveyDTO toDTOSurvey(Survey survey) {
+    public static SurveyDTO mapToDTO(Survey survey) {
         SurveyDTO surveyDTO = new SurveyDTO();
         surveyDTO.setSurveyId(survey.getSurveyId());
         surveyDTO.setTitle(survey.getTitle());
@@ -51,7 +51,7 @@ public class SurveyMapper {
         return surveyDTO;
     }
 
-    public static Question toEntityQuestion(QuestionDTO questionDTO) {
+    public static Question mapQuestionToMongo(QuestionDTO questionDTO) {
         Question question = new Question();
         question.setQuestionText(questionDTO.getQuestionText());
         question.setQuestionId(questionDTO.getQuestionId() != null
@@ -62,7 +62,7 @@ public class SurveyMapper {
         return question;
     }
 
-    public static QuestionDTO toDTOQuestion(Question question) {
+    public static QuestionDTO mapQuestionToDTO(Question question) {
         QuestionDTO questionDTO = new QuestionDTO();
         questionDTO.setQuestionText(question.getQuestionText());
         questionDTO.setQuestionId(question.getQuestionId());
@@ -71,7 +71,7 @@ public class SurveyMapper {
         return questionDTO;
     }
 
-    public static Choice toEntityChoice(ChoiceDTO choiceDTO) {
+    public static Choice mapChoiceToMongo(ChoiceDTO choiceDTO) {
         Choice choice = new Choice();
         choice.setChoiceText(choiceDTO.getChoiceText());
         choice.setChoiceId(choiceDTO.getChoiceId() != null
@@ -80,7 +80,7 @@ public class SurveyMapper {
         return choice;
     }
 
-    public static ChoiceDTO toDTOChoice(Choice choice) {
+    public static ChoiceDTO mapChoiceToDTO(Choice choice) {
         ChoiceDTO choiceDTO = new ChoiceDTO();
         choiceDTO.setChoiceText(choice.getChoiceText());
         choiceDTO.setChoiceId(choice.getChoiceId());
@@ -89,25 +89,25 @@ public class SurveyMapper {
 
     private static List<Question> toEntityQuestionList(List<QuestionDTO> questionDTOList) {
         return questionDTOList.stream()
-                .map(SurveyMapper::toEntityQuestion)
+                .map(SurveyMapper::mapQuestionToMongo)
                 .collect(Collectors.toList());
     }
 
     private static List<QuestionDTO> toDTOQuestionList(List<Question> questionList) {
         return questionList.stream()
-                .map(SurveyMapper::toDTOQuestion)
+                .map(SurveyMapper::mapQuestionToDTO)
                 .collect(Collectors.toList());
     }
 
     private static List<Choice> toEntityChoiceList(List<ChoiceDTO> choiceDTOList) {
         return choiceDTOList.stream()
-                .map(SurveyMapper::toEntityChoice)
+                .map(SurveyMapper::mapChoiceToMongo)
                 .collect(Collectors.toList());
     }
 
     private static List<ChoiceDTO> toDTOChoiceList(List<Choice> choiceList) {
         return choiceList.stream()
-                .map(SurveyMapper::toDTOChoice)
+                .map(SurveyMapper::mapChoiceToDTO)
                 .collect(Collectors.toList());
     }
 }
