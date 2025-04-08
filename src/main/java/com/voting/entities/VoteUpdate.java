@@ -8,6 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 public class VoteUpdate {
+    private String correlationId;
     private String questionId;
     private String choiceId;
     private long votes;
